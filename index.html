@@ -19,19 +19,22 @@
                 age: 22
             }
 
-            handleClick(e)
+            handleClick = (e) =>
             {
                 console.log(e)
-                console.log('Click Event Trigerred!')
+                this.setState({
+                    name: "Ahmad Abdullah",
+                    age: 21
+                });
             }
 
-            handleHover(e)
+            handleHover = (e) =>
             {
                 console.log(e)
                 console.log('Mouse is being Hovered!')
             }
 
-            handleCopy(e)
+            handleCopy = (e) =>
             {
                 console.log(e)
                 console.log('You have copied the content!')
