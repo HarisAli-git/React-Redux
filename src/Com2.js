@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Com1 = (props) => {
-
-    const {crowd} = props;
+const Com1 = ({crowd}) => {
     const people = crowd.map(person => {
-        return (
+        return person.age > 21 ? (
             <div className="person" key={person.id}>
                 <div>
                     {person.name}
@@ -13,7 +11,7 @@ const Com1 = (props) => {
                     {person.age}
                 </div>
             </div>
-        )
+        ): null;
     })
 
     return(
