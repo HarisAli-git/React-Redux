@@ -3,12 +3,23 @@ import React, { Component } from 'react'
 class Com1 extends Component{
     render(){
 
-        const {name, age} = this.props
+        const {crowd} = this.props;
+        const people = crowd.map(person => {
+            return (
+                <div className="person" key={person.id}>
+                    <div>
+                        {person.name}
+                    </div>
+                    <div>
+                        {person.age}
+                    </div>
+                </div>
+            )
+        })
 
         return(
             <div className="com">
-                <h3>Name: {name} </h3>
-                <h2>Body: {age} </h2>
+                {people}
             </div>
         )
     }
