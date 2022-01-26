@@ -1,6 +1,7 @@
 import { Component } from 'react/cjs/react.development';
 import './App.css';
 import Com1 from './Com2';
+import AddPerson from './AddPerson';
 
 class App extends Component{
 
@@ -19,6 +20,7 @@ class App extends Component{
         Second React App!
       </p>
       <Com1 crowd = {this.state.people}/>
+      <AddPerson />
     </div>
   );}
 }
