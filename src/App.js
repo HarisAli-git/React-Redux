@@ -13,6 +13,18 @@ class App extends Component{
     ]
   }
 
+  DeletePerson = (id) => {
+    console.log(id);
+    let c_people = this.state.people.filter(person => {
+      return person.id !== id;
+    })
+
+    this.setState({
+      people: c_people
+    })
+
+  }
+
   AddPerson = (person) => {
     console.log(person);
     person.id = Math.random();
@@ -32,7 +44,7 @@ class App extends Component{
       <p>
         Second React App!
       </p>
-      <Com1 crowd = {this.state.people}/>
+      <Com1 crowd = {this.state.people} deletePerson={this.DeletePerson}/>
       <AddPerson AddPerson = {this.AddPerson}/>
     </div>
   );}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Com1 = ({crowd}) => {
+const Com1 = ({crowd, deletePerson}) => {
     const people = crowd.map(person => {
         return person.age > 21 ? (
             <div className="person" key={person.id}>
@@ -10,6 +10,7 @@ const Com1 = ({crowd}) => {
                 <div>
                     {person.age}
                 </div>
+                <button onClick={() => {deletePerson(person.id)}}>Delete Me!</button>
             </div>
         ): null;
     })
