@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import Todo from "./todo";
+import AddTODO from "./AddTODO";
 
 class App extends Component{
   
@@ -13,8 +14,26 @@ class App extends Component{
   ]
   }
 
+  AddTodo = (todo_item) => {
+    todo_item.id = Math.random();
+    let t = [...this.state.todo, todo_item]
+
+    this.setState({
+      todo: t
+    })
+  }
+
   deleteTODO = (id) => {
-    console.log(id)
+    let todo_c = this.state.todo.filter(
+      todo => {return id !== todo.id} 
+    )
+
+    this.setState(
+      {
+        todo: todo_c
+      }
+    )
+
   }
 
   render()
@@ -23,6 +42,7 @@ class App extends Component{
     <div className="todo-app container">
       <h1 className="center blue-text">TODO LIST!</h1>
       <Todo todolist={this.state.todo} deleteTODO={this.deleteTODO}></Todo>
+      <AddTODO AddTodo={this.AddTodo} />
     </div>
   )
   }
