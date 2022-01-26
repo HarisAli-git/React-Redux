@@ -13,6 +13,19 @@ class App extends Component{
     ]
   }
 
+  AddPerson = (person) => {
+    console.log(person);
+    person.id = Math.random();
+    let c_people = [...this.state.people, person];
+    console.log(c_people);
+    this.setState(
+      {
+        people: c_people
+      }
+    )
+
+  }
+
   render(){
   return (
     <div className="App">
@@ -20,7 +33,7 @@ class App extends Component{
         Second React App!
       </p>
       <Com1 crowd = {this.state.people}/>
-      <AddPerson />
+      <AddPerson AddPerson = {this.AddPerson}/>
     </div>
   );}
 }

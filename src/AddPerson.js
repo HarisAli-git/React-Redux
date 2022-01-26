@@ -16,7 +16,7 @@ class AddPerson extends Component{
 
     HandleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.AddPerson(this.state);
     }
 
     render(){
