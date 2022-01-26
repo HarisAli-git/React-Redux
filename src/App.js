@@ -14,7 +14,16 @@ class App extends Component{
   }
 
   deleteTODO = (id) => {
-    console.log(id)
+    let todo_c = this.state.todo.filter(
+      todo => {return id !== todo.id} 
+    )
+
+    this.setState(
+      {
+        todo: todo_c
+      }
+    )
+
   }
 
   render()
